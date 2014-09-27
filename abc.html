@@ -1,0 +1,39 @@
+<!DOCTTYPE HTML>
+<html>
+<head>
+    <title>abc</title>
+</head>
+<style>
+    #outer{
+    width:500px;
+    height:500px;
+    background-color:red;
+}
+
+#inner{
+    width:300px;
+    height:300px;
+    background-color:green;
+    margin:0 auto;
+}
+</style>
+    <body>
+        <div id="outer">element1
+            <div id="inner">element2</div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        window.onload=function(){
+        var div1=document.getElementById("outer");
+        var div2=document.getElementById("inner");
+        
+        div1.addEventListener("click",function(event){
+            alert(div1.getAttribute("id")+" was clicked");
+        },true);
+        
+        div2.addEventListener("click",function(event){
+            alert(div2.getAttribute("id")+" was clicked");
+        },false);
+        }
+    </script>
+</html>

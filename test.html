@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY PAGE</title>
+</head>
+<body bgcolor=yellow>
+<h1 style="font-size:20px;color:blue;font-family:Verdana;text-align:center;text-decoration:underline">In attempt of doing something</h1>
+	<p style="font-size:16px;font-family:Arial;color:red">This is a paragraph that is going to contain a list</p>
+	<ul>
+	<li><em>Name</em></li>
+		<ol>
+		<li>First Name</li>
+		<li>Middle Name</li>
+		<li>Last Name</li>
+		</ol><br>
+	<li><em>address</em></li>
+		<ol>
+		<li>address line1</li>
+		<li>address line2</li>
+		<li>address line3</li>
+		</ol>
+	</ul>
+<br> <br> <br>
+<table border=1>
+	<th text-align="center">Table Header</th>
+	<tr><td>first name</td>
+	    <td>middle name</td>
+	    <td>last name</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+var ch=prompt("Do you want to do some math stuff");
+if(ch==="yes"){
+var choose=prompt("What do you want to do mul or div");
+var a=prompt("enter a number");
+var b=prompt("enter another number")
+if(choose==="mul"){
+var res=mul(a,b);
+alert("Result is:"+res);
+}
+else{
+var res=div(a,b);
+alert("Result is:"+res);
+}
+}
+else
+alert("Good day...!!!");
+
+function mul(x,y){
+return x*y;
+}
+
+function div(x,y){
+return x/y;
+}
+</script>
+</html>

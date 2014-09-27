@@ -1,0 +1,85 @@
+js is case sensitive.
+
+objects in js can be thought of as an dictionary
+
+closure-inner function can access outer functions variables and parameters.it holds snapshot of the function evrytym cald wit a different parameter(courtesy pluralsight ASP.NET Ajax JavaScript and jQuery video closure).
+
+asynchronous - means non-blocking. parsing will continue and call back will notify wen the func in completed.
+
+synchronous- means blocking. pasring will be stopped.
+
+DOM - 3 states loading, ready, complete.
+
+anonymous - noname or unknown.
+
+callback - pass a function as argument to another function, we are oly defining the callback function and not executing it. it can be invoked any wer inside the containing function and it can access all the variables of the containing function i.e it has the closure property.
+- we use the call and apply methods to resolve the issue of this, when the callback function is a      method.call takes two params first to which we hav to set the value of this to & the other is the   other set of parameters to the called function. Appy also the same except the second parameter is an   array of values to pass to the function.
+
+
+
+
+/* IN JS THE ARRAY INDEX IS NOT A NUMBER, ITS A STRING.(its a string based index of the elements of 								array).
+	
+	a[0] is the same as a["0"]; both are index value is string.
+
+ */
+
+
+assinging a func to variable and passing the parameter executes the fucn and has its result stored in that variable. to view u jus hav to invoke it with ().
+
+
+global scope of this keyword is the global object window.
+
+
+3ways of calling function is the call, apply and new keywrod.
+
+
+binding a method to a function prototype makes it inaccessable, this can be done using the .prototype keyword on the name of function.
+To acheive static fields and methods in js we can directly attach the new method or property to the function witout the prototype keyword.
+
+example : 	function abc(){
+		this.name = "abc",
+		this.value = 25
+		} 
+				
+		abc.prototype.display = function(){   // attaching to prototype of the function
+		alert( this.name +","+ this.value );
+		};
+
+		var a = new abc();
+		a // outputs: abc {name: "abc", value: 25, display: function}
+
+		a.display() // is accessable
+		
+		abc.salary = 10000;          // attaching witout prototype
+
+		abc.showsal = function(){    
+		alert(this.salary);
+		};
+                
+		abc.salary;     //this is accessable
+		abc.showsal();  //this too is accessable
+
+		a.showsal();    //cannot access
+		a.salary;	//cannot access
+
+
+this-will keep the properties of a function global and assigning it to a variable will make it private.
+prefix an underscore on the private variable.
+
+
+we can make the prototype property of an object the object's own property by using the .bind() method.
+
+
+Object.constructor is a reference to the object that created the object.
+
+Object.prototype is used for inheritance and for looking through the prototype chain and to add properties and methods to the object.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head><title>grid</title></head>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+            padding: 10px;
+            height: auto;
+            border-spacing: 2px;
+            border-collapse: collapse;
+        }
+    </style>
+    <body>
+        <input type="text" id="rows"/>
+        <input type="text" id="cols"/>
+        <input type="button" id="click" value="click"/>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            $(function(){
+                $('#click').on('click',function(){
+                    var r=$('#rows').val();
+                    var c=$('#cols').val();
+                    var table="<table>";
+                    for(var i=1;i<=r;i=i+1){
+                        table+="<tr>";
+                        for(var j=1;j<=c;j++){
+                            table+="<td>"+j+"</td>"
+                        }
+                        table+="</tr>"
+                    }
+                    table+="</table>";
+                    $('body').append(table);
+                });
+            });
+        </script>
+    </body>
+</html>

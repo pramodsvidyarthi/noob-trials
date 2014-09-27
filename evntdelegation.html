@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>event delegation</title>
+    </head>
+    <body>
+        <div>
+            <ul id="list">
+                <li><a href="#">link1</a> </li>
+                <li><a href="#">link2</a> </li>
+                <li><a href="#">link3</a> </li>
+                <li><a href="#">link4</a> </li>
+                <li><a href="#">link5</a> </li>
+                <li><a href="#">link6</a> </li>
+            </ul>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            // this is event delegation after binding
+            // link 7 dynamically also it logs to the                   console, giving $(#list li)in the                       selection wont work.
+            //this is accomplished by passing the second parameter as "a" which is checked for matching in the #list and if found then it logs to the console.
+            $(document).ready(function(){ 
+               $("#list").on("click","a",function(e){
+                   e.preventDefault();
+                   console.log($(this).text());
+               }); 
+                $( "#list" ).append( "<li><a href='#'>link7</a></li>" );
+            });
+        </script>
+    </body>
+</html>
+<!-- remove the second parameter and then in the selection pass the #list a and check it will work but oly up2 the link6, it wont consider the links that are binded dynamically after that -->
